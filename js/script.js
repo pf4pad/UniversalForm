@@ -1,9 +1,6 @@
 $(document).ready(function() {
 
-      /* Валидация формы */
-      $('#form').validate({
-        lang: 'ru'  // or whatever language option you have.
-      });
+      
 	//E-mail Ajax Send
 	$("form").submit(function() { //Change
 		var th = $(this);

@@ -24,6 +24,11 @@
           <input id="formName" type="text" name="name" class="form__input" required>
         </div>
         <div class="form__item">
+          <label for="forPhone" class="form__label">
+            Телефон* </label>
+          <input id="formPhone" type="phone" name="phone" class="form__input phone" required>
+        </div>
+        <div class="form__item">
           <label for="forName" class="form__label">
             E-mail* </label>
           <input id="email" type="text" name="email" class="form__input" required>
@@ -80,44 +85,10 @@
 
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js">
   </script>
-  <script src="jquery.validate.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      /* Стилизация селекта */
-      $('.select').select2({
-        placeholder: "Выбирите возраст",
-        allowClear: true
-      });
-    });
-    /* Валидация формы */
-    $('#form').validate({
-      rules: {
-        name: {
-          required: true,
-          minlength: 2
-        },
-        email: {
-          required: true,
-          email: true
-        },
-
-      },
-      messages: {
-        name: {
-          required: "Поле 'Имя' обязательно к заполнению",
-          minlength: "Введите не менее 2-х символов в поле 'Имя'"
-
-        },
-        email: {
-          required: "Поле 'Email' обязательно к заполнению",
-          email: "Необходим формат адреса email"
-        }
-      }
-
-    });
-
-
-    /* Стилизация селекта */
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/jquery.maskedinput.min.js"></script>
+  <script src="js/jquery.disableAutoFill.min.js"></script>
+  <script src="js/main.js">
 
   </script>
   <!--<script src="script.js"></script>-->
