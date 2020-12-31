@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="normolize.css">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+  <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Form</title>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="form">
+      <form action="#" class="form__body" id="form">
+        <h1 class="form__title">Отправка данных на почту</h1>
+        <div class="form__item">
+          <label for="forName" class="form__label">
+            Имя* </label>
+          <input id="formName" type="text" name="name" class="form__input" required>
+        </div>
+        <div class="form__item">
+          <label for="forName" class="form__label">
+            E-mail* </label>
+          <input id="email" type="text" name="email" class="form__input" required>
+        </div>
+        <div class="form__item">
+          <div class="form__label">Левша или правша</div>
+          <div class="options">
+            <div class="options__item">
+              <input id="formRightHanded" checked type="radio" value="right" name="hand" class="options__input">
+              <label for="formRightHanded" class="options__label"><span>Правша</span></label>
+            </div>
+            <div class="options__item">
+              <input id="formLeftHanded" type="radio" value="left" name="hand" class="options__input">
+              <label for="formLeftHanded" class="options__label"><span>Левша</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="form__item">
+          <label for="forMessage" class="form__label">Сообщение</label>
+          <textarea name="message" id="forMessage" class="form__input"></textarea>
+        </div>
+        <div class="form__item">
+          <div class="form__label">Возраст:</div>
+          <select name="age" class="select">
+            <option value="18-25">18-25</option>
+            <option value="25-35">25-35</option>
+            <option value="35-45">35-45</option>
+            <option value="45-55">45-55</option>
+          </select>
+        </div>
+        <div class="form__item">
+          <div class="form__label">Прикрепить фото</div>
+          <div class="file">
+            <div class="file__item">
+              <input id="formImage" accept=".jpg, .png, .gif" type="file" name="image" class="file__input">
+              <div class="file__button">Выбрать</div>
+              <div id="formPreview" class="file__preview"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form__item">
+          <div class="checkbox">
+            <input type="checkbox" checked name="agreement" class="checkbox__input" id="formAgreement" required>
+            <label for="formAgreement" class="checkbox__label"><span>Я даю согласие и ознакомлен с <a href="#"
+                  class="">Условиями</a></span></label>
+          </div>
+        </div>
+        <button type="submit" class="form__button">Отправить</button>
+        <button type="reset" class="form__button">Сбросить</button>
+      </form>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js">
+  </script>
+  <script src="jquery.validate.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      /* Стилизация селекта */
+      $('.select').select2({
+        placeholder: "Выбирите возраст",
+        allowClear: true
+      });
+    });
+    /* Валидация формы */
+    $('#form').validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 2
+        },
+        email: {
+          required: true,
+          email: true
+        },
+
+      },
+      messages: {
+        name: {
+          required: "Поле 'Имя' обязательно к заполнению",
+          minlength: "Введите не менее 2-х символов в поле 'Имя'"
+
+        },
+        email: {
+          required: "Поле 'Email' обязательно к заполнению",
+          email: "Необходим формат адреса email"
+        }
+      }
+
+    });
+
+
+    /* Стилизация селекта */
+
+  </script>
+  <!--<script src="script.js"></script>-->
+</body>
+
+</html>
